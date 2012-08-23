@@ -7,13 +7,12 @@ Usage:
 
 Just copy the pyNotificationCenter.py file into your source tree and import it.
 e.g.:
-`
-import pyNotificationCenter
-# show a message instantly
-pyNotificationCenter.notify("Test message", "Subtitle", "Show instantly", sound=True)
-# show a message after 20 seconds
-pyNotificationCenter.notify("Another test", None, "Show after 20 seconds", 20)
-`
+
+    import pyNotificationCenter
+    # show a message instantly
+    pyNotificationCenter.notify("Test message", "Subtitle", "Show instantly", sound=True)
+    # show a message after 20 seconds
+    pyNotificationCenter.notify("Another test", None, "Show after 20 seconds", 20)
 
 Handling clicks
 ---------------
@@ -28,17 +27,15 @@ e.g.
 
 In your notification:
 
-`
-pyNotificationCenter.notify("Test message", "Subtitle", "Show instantly", userInfo={"action":"open_url", "value":"http://www.ganglionsoftware.com"})
-`
+    pyNotificationCenter.notify("Test message", "Subtitle", "Show instantly", userInfo={"action":"open_url", "value":"http://www.ganglionsoftware.com"})
 
 In your app delegate:
-`
-def applicationDidFinishLaunching_(self, sender):
-  ...
-  # check if the application launch sender's userInfo
-  userInfo = sender.userInfo()
-  if userInfo["action"] == "open_url":
-    // open url
-  ...
-`
+
+    def applicationDidFinishLaunching_(self, sender):
+      ...
+      # check if the application launch sender's userInfo
+      userInfo = sender.userInfo()
+      if userInfo["action"] == "open_url":
+        // open url
+      ...
+      
